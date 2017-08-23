@@ -20,8 +20,8 @@ export class AppComponent {
       'description':[null,Validators.compose([Validators.required,Validators.minLength(30),Validators.maxLength(500)])],
        'validate':''
 
-
-
+       //iste bukadar
+   
     })
 
   }
