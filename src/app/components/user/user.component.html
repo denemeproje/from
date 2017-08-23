@@ -1,0 +1,73 @@
+<div class="body" >
+<img src="http://media.istockphoto.com/photos/e-book-digital-learning-picture-id611881740"  width="1000" height="200" /><br>
+ <button (click)="onclick()">tiklavegor</button> <button (click)="toggleedit()">edit user</button><a href="http://localhost:4200/about"><button class="as">about</button></a>
+ 
+<hr>
+<h1>ADINIZ: {{name}}</h1>
+
+<ul>
+  <li>YAŞ: {{age}} </li>
+  <li>Email: {{email}}</li>
+  <li>{{adres.city}}, {{adres.state}}, {{adres.street}} </li>  
+  </ul>
+<hr>
+<div *ngIf=isedit>
+ <h1 class="as" >edit user</h1>
+   <form >
+  <div>
+    <label for="name"> AD: </label><br>
+    <input type="text" [(ngModel)]= "name" name="name">
+    </div>
+   <div>
+    <label for="age">YAŞ:</label><br>
+    <input type="text"  [(ngModel)]= "age" name="age">
+    </div>
+   <div>
+    <label for="email">Email: </label><br>
+    <input type="text"  [(ngModel)]= "email"  name="email">
+    </div>
+   <div>
+    <label for="city">Şehir: </label><br>
+    <input type="text"  [(ngModel)]= "adres.city"  name="city">
+    </div>
+   <div>
+    <label for="state">Eyalet: </label><br>
+    <input type="text"  [(ngModel)]= "adres.state"  name="state">
+    </div>
+   <div>
+    <label for="street">Sokak: </label><br>
+    <input type="text"  [(ngModel)]= "adres.street"  name="street">
+    </div>
+  </form>
+</div>
+<h1  >HOBİLERİNİZ</h1>
+<form (submit)='addhobi(hobim.value)'>
+  <div>
+    <label for="hobim">HOBİLERİNİZ:</label>
+    <input type="text" #hobim>
+    <br>
+  </div>
+</form>
+ 
+<ul>
+
+   <li *ngFor="let item of hobi;let i=index">
+    {{i+1}}.{{item}}
+    <br> 
+    <button (click)="deletehobi(item)" >X</button>
+    <br>
+  </li> 
+
+
+</ul>
+
+<h1>posts user</h1>
+
+<div  *ngFor="let posts of post">
+  <h4>{{posts.title}}</h4>
+  <p>{{posts.body}}</p>
+  <p>{{posts.userid}}</p>
+  <p>{{posts.id}}</p>
+</div>
+
+</div>
