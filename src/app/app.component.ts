@@ -6,7 +6,7 @@ import{FormBuilder, FormGroup ,Validators} from  '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'naber';
   rform:FormGroup;
   post:any;
   description:string;
